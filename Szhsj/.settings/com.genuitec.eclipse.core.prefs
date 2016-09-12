@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+validator.Checked=src/main/webapp/common,src/main/webapp/admin/login.jsp,src/main/webapp/template/front,src/main/webapp/WEB-INF/template/front,src/main/webapp/mobile/ux
+validator.Unchecked=

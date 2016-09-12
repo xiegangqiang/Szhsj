@@ -1,0 +1,62 @@
+.project6style div{
+	right:0;
+	top:30%;
+	width: 100%;
+}
+
+body,ul{
+	margin: 0px;
+	padding: 0px;
+	color:white;
+}
+
+.project6style div li{	
+	font-size: 12px;
+	margin-top: 3%;
+	margin-left:50%;
+	list-style: none;
+	text-align:right;		
+	float: right;
+	font-weight: bold;
+	padding:5% 0% 5% 0%;
+}
+
+.one{
+	background: #d53418;
+	width: 30%;
+}
+
+.two{
+	background: #b7b411;
+	width: 40%;
+}
+
+.three{
+	background: #57a102;
+	width: 50%;
+}
+
+.four{
+	background: #0f7ba2;
+	width: 35%;
+}
+
+.five{
+	background: #870b9f;
+	width: 45%;
+}
+
+.six{
+	background: #530a99;
+	width: 31%;
+}
+
+.seven{
+	background: #0f7ba2;
+	width: 29%;
+}
+
+.eight{
+	background: #57a102;
+	width: 30%;
+}

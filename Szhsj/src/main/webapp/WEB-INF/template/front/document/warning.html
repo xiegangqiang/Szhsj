@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>航行警告</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+    
+    <link rel="stylesheet" type="text/css" href="../template/front/default/css/style.css">
+
+  </head>
+  
+  <body>
+  <@xy_document id=sys_id businessCode=sys_businessCode>
+  <#if res.result==1>
+  <#list res.datas.table.row as l>
+    <div class="title">
+    	<h1>
+    		<span class="h1-1">中华人民共和国深圳海事局</span>
+    		<span class="h1-2">航行警告</span>
+    	</h1>
+    </div>
+    <div class="numOrder">流水号  ${l.FBBHSXZW} ${l.FBBH}</div>
+    <div class="content">
+    	<table>
+    		<tr>
+    			<td>等级：${l.DJ}</td>
+    			<td>播发台：${l.BFDT}</td>
+    		</tr>
+    		<tr>
+    			<td>播发天数：${l.BFTS}天</td>
+    			<td>交法时间：${l.JFSJ}</td>
+    		</tr>
+    		<tr>
+	    		<td colspan="6" class="main">${l.NRZW}</td>
+    		</tr>
+    	</table>
+    </div>
+    
+    <div class="footer">
+    	<span>拟稿人：${l.NGR}</span>
+    	<span>审核人：${l.SYR}</span>
+    	<span>签发人：${l.QFR}</span>
+    	<span>签发日期：${l.QFRQ}</span>
+    	<span>联系电话：${l.LXDM}</span>
+    </div>
+    </#list>
+    <#else>
+    <div class="warningInfo"><img src="../template/front/default/images/warning.png" />${res.info}</div>
+  </#if>
+  </@xy_document>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+	<title>${sys_title}</title>
+	<link href="../template/front/detail/model_1/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../template/front/detail/model_1/css/owl.theme.css" rel="stylesheet" type="text/css" />
+	<link href="../template/front/detail/model_1/css/owl.carousel.css" rel="stylesheet" type="text/css" />
+	<link href="../template/front/detail/model_1/css/video-js.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="../template/front/detail/model_1/js/video.js"></script>
+	<script>
+		videojs.options.flash.swf = "../template/front/detail/model_1/img/video-js.swf";
+  	</script>
+</head>
+<body>
+  	<div class="con">
+		<@xy_imagemes  imagemes=sys_imagemes tag=sys_tag >
+  		<div class="con-title">
+  			<p class="p1"><#if res??>${res.name}<#else>这里是信息或文章内容标题</#if></p>
+  			<p class="p2"><#if res??>${res.descript}    ${res.createDate?date}<#else>这里是信息或文章来源　发布日期</#if></p>
+  		</div>
+  		</@xy_imagemes >
+  		
+  		<div class="con-content">
+  			  <@xy_accessory_list imagemes=sys_imagemes>	
+  			  <#if res?? >
+  			  <#if res[0]?? && res[0].type==1>
+              <div id="owl-demo" class="owl-carousel">
+              	<#list res as l>
+                <div class="item"><img src="http://sz.msa.gov.cn:85/Upload/${l.path}" alt=""></div>
+                </#list>
+              </div>
+              </#if>
+              <#else>
+              <div id="owl-demo" class="owl-carousel">
+                <div class="item"><img src="../template/front/detail/model_1/img/fullimage.jpg" alt=""></div>
+                <div class="item"><img src="../template/front/detail/model_1/img/fullimage.jpg" alt=""></div>
+              </div>
+              </#if>
+              </@xy_accessory_list>
+              
+              <@xy_accessory_list imagemes=sys_imagemes>	
+              <#if res?? >
+              <#list res as l>
+              <#if l_index==0><#assign cover='http://sz.msa.gov.cn:85/Upload/'+l.path></#if>
+              <#if l.type==10 && (l.suffix?index_of('.mp4')==0 || l.suffix?index_of('.webm')==0 || l.suffix?index_of('.ogg')==0)>
+              <div class="videocon">
+				<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="100%" height="230"
+				  poster="${cover}" data-setup="{}">
+					<source src="http://sz.msa.gov.cn:85/Upload/${l.path}" type='video/mp4' />
+					<source src="http://sz.msa.gov.cn:85/Upload/${l.path}" type='video/webm' />
+					<source src="http://sz.msa.gov.cn:85/Upload/${l.path}" type='video/ogg' />
+				</video>
+              </div>
+              </#if>
+              </#list>
+              <div id="owl-demo" class="owl-carousel" style="margin-top: 20px">
+              	<#list res as l>
+              	<#if l_index!=0 && (l.suffix?index_of('.mp4')==-1 && l.suffix?index_of('.webm')==-1 && l.suffix?index_of('.ogg')==-1)>
+                <div class="item"><img src="http://sz.msa.gov.cn:85/Upload/${l.path}" alt=""></div>
+                </#if>
+                </#list>
+              </div>
+              <#else>
+              <div class="videocon">
+				<video id="example_video_1" class="video-js vjs-default-skin vjs-big-play-centered" controls preload="none" width="100%" height="230"
+				  poster="http://video-js.zencoder.com/oceans-clip.png" data-setup="{}">
+					<source src="../template/front/detail/model_1/img/test.mp4" type='video/mp4' />
+					<source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+					<source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+				</video>
+              </div>
+              </#if>
+              </@xy_accessory_list>
+              
+              <@xy_imagemes  imagemes=sys_imagemes tag=sys_tag >
+              <div class="article">
+              <#if res??>${res.content}<#else>这里是信息或文章主要内容区域</#if>
+              </div>
+              </@xy_imagemes >
+              
+              <@xy_accessory_list imagemes=sys_imagemes>
+  			  <#if res?? >
+  			  <#list res as l>
+  			  <#if l.type==2 || l.type==100>
+              <div class="goods">
+              	<div>附件：</div>
+              	<div>
+              		<p><a href="http://sz.msa.gov.cn:85/Upload/${l.path}">${l.name}</a></p>
+              	</div>
+              </div>
+              </#if>
+              </#list>
+              <#else>
+              <div class="goods">
+              	<div>附件：</div>
+              	<div>
+              		<p><a href="">这里是附件区域</a></p>
+              	</div>
+              </div>
+              </#if>
+  			  </@xy_accessory_list>
+  		</div>
+  	</div>
+</body>
+<script type="text/javascript" src="../template/front/detail/model_1/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../template/front/detail/model_1/js/owl.carousel.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-demo").owlCarousel({
+      autoPlay: 2000,
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem : true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+      });
+    });
+    </script>
+</html>

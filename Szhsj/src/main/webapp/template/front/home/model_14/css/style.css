@@ -1,0 +1,95 @@
+ul{margin:0;
+   padding:0;}
+
+.projecttitle{
+	background:red;
+	height: 40px;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+}
+
+.list1 div{
+	width: 30.1%;
+	border:1px solid #999;
+	color: #333;
+	margin-top: 2%;
+	float: left;
+	margin-left: 2.3%;
+}
+
+.list1 span{
+	display: block;
+	margin-top: 15%;
+	font-size:13px;
+}
+
+.list1 img{
+	float: left;	
+}
+
+.rolling{
+	float:left;
+	text-align:center;
+	margin-left:-6%;
+	margin-top:5px;
+}
+.rolling li{
+	list-style: none;
+	color: #333;
+	list-style: none;
+	font-size: 13px;
+	width: 100%;
+}
+
+.shopbanner{
+	float: left;
+	color:#666;
+	font-size: 14px;
+}
+
+.shopbanner li{
+	display: inline;
+	float: left;
+	margin-left: 0;
+	margin-right: 0px;
+	margin-top: 4.8%;
+	list-style: none;
+}
+
+.goodslist{
+	float: left;
+}
+
+.goodslist ul{
+	margin: 0;
+	padding: 0;
+}
+
+.goodslist li{
+	float: left;
+	display: inline;
+	list-style: none;
+	width:30%;
+	margin-left: 2%;
+	margin-bottom:2%;
+	border: 1px solid gray;
+	color: red;
+	font-size: 12px;
+	
+}
+.goodslist span{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	word-wrap:break-word;
+	white-space:normal;
+	text-align: center;
+}
+.goodslist li img{
+	width: 100%;
+}
+
+.w_98{width: 98%}
+.w_100{width: 100%}
+.margin_l_r_auto{margin-right:auto;margin-left:auto;}

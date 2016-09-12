@@ -1,0 +1,100 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,img,li{
+	margin:0;
+	padding:0;
+}
+
+li {
+	list-style: none;
+}
+
+.title {
+	margin:0 2%;
+	width: 96%;
+	font-size: 0.8em;
+}
+
+.title span {
+	display:inline-block;
+	margin:0 auto;
+	text-align:center;
+	width: 100%;
+	line-height: 1.5em;
+}
+
+.title .h1-2 {
+	letter-spacing: 0.5em;
+}
+
+.numOrder {
+	width:96%;
+	margin:2%;
+	text-align: right;
+	font-weight: bold;
+}
+
+.content {
+	width: 96%;
+	margin:0 2%;
+}
+
+.content table{
+	width: 100%;
+	border-collapse: collapse;
+	/* color: #555; */
+}
+
+.content table tr {
+	width: 100%;
+}
+
+.content table tr td {
+	line-height:1.5em;
+	border-width: 0.1em;
+	border-color: #dddddd;
+	border-style: solid;
+}
+
+.content .main {
+	padding:1em 0.5em 3em 0.5em
+}
+
+.hrline {
+	width: 96%;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #f00;
+	border-bottom: 4px solid #f00;
+	margin:0 2%;
+}
+
+.releaseTime {
+	width:90%;
+	text-align: right;
+}
+
+.warningInfo {
+	width: 90%;
+	margin:40% 5%;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.warningInfo img {
+	width: 10%;
+	vertical-align: bottom;
+	margin-right:2%;
+}
+
+.footer {
+	width: 96%;
+	margin:0 2%;
+}
+
+.footer span {
+	display: inline-block;
+	line-height: 25px;
+}
+
+

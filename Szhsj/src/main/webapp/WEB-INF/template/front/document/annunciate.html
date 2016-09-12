@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>航行通告</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+    
+    <link rel="stylesheet" type="text/css" href="../template/front/default/css/style.css">
+
+  </head>
+  
+  <body>
+  <@xy_document id=sys_id businessCode=sys_businessCode>
+  <#if res.result==1>
+  <#list res.datas.table.row as l>
+    <div class="title">
+    	<h1>
+    		<span class="h1-2" style="color: #f00">航行通告</span>
+    	</h1>
+    	<div class="numOrder" style="color: #00f;text-align: center;">${l.TGNR}</div>
+    </div>
+    <div class="hrline"></div>
+    
+    <div class="content">
+    	<h2 style="text-align: center;">${l.TGBT}</h2>
+    	<div class="main">${l.NRZW}</div>
+    	<div class="releaseTime">${l.HSJZ}</div>
+    </div>
+    
+    </#list>
+    <#else>
+    <div class="warningInfo"><img src="../template/front/default/images/warning.png" />${res.info}</div>
+  </#if>
+  </@xy_document>
+  </body>
+</html>

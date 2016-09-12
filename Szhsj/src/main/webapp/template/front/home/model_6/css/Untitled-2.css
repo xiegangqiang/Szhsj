@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+img{ width:100%;}
+
+
+
+ul{
+	padding:0;}
+
+li{
+	list-style:none;}
+	
+.model_list{
+	width:100%;
+	position:relative;
+	margin-top:50%;
+	}
+	
+.model_list li{
+	
+	float:left;
+	width:16%;
+	margin-left:7.5%;
+	margin-top:15%;
+	}
+	
+.model_list span{
+	float:left;
+	text-align:center;
+	display:block;}
+	
+.model_list img{
+	width:100%;}
+		
+
+.focus{ position:absolute; width:99%;  background-color: #000; float:left;top:0;margin-left: auto;margin-right: auto;}  
+.focus img{ width: 100%; } 
+.focus .btn{ position:absolute; bottom:34px; left:510px; overflow:hidden; zoom:1;} 
+.focus .btn a{position:relative; display:inline; width:13px; height:13px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }  
+.focus .btn a:hover,.focus .btn a.current{  cursor:pointer;background:#fc114a;}  
+.focus .fPic{ position:absolute; left:0px; top:0px;width:100%; }  
+.focus .D1fBt{ overflow:hidden; zoom:1;  height:16px; z-index:10;  }   
+.focus .fcon{ position:relative; width:100%; float:left;  display:none; background:#000  }  
+.focus .fcon img{ display:block;width:100%; }  
+.focus .fbg{bottom:25px; right:40px; position:absolute; height:21px; text-align:center; z-index: 200; }  
+.focus .fbg div{margin:4px auto 0;overflow:hidden;zoom:1;height:14px}    
+.focus .D1fBt a{position:relative; display:inline; width:12px; height:12px; border-radius:7px; margin:0 5px;color:#B0B0B0;font:12px/15px "\5B8B\4F53"; text-decoration:none; text-align:center; outline:0; float:left; background:#D9D9D9; }    
+.focus .D1fBt .current,.focus .D1fBt a:hover{background:#fc114a;}    
+.focus .D1fBt img{display:none}    
+.focus .D1fBt i{display:none; font-style:normal; }    
+.focus .prev,.focus .next{position:absolute;width:40px;height:74px;background: url(../images/focus_btn.png) no-repeat;}
+.focus .prev{margin-top:200px;left: 0;background-position:0 -74px; cursor:pointer; }  
+.focus .next{margin-top:200px;right: 0;  background-position:-40px -74px;  cursor:pointer;}  
+.focus .prev:hover{  background-position:0 0; }  
+.focus .next:hover{  background-position:-40px 0;}  

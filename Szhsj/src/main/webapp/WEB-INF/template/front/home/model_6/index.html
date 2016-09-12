@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>${sys_title}</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />		
+    <link rel="stylesheet" href="${sys_basePath}/css/style.css" type="text/css"></link>
+    <script src="../template/front/home/model_6/js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="${sys_basePath}/css/plugmenu.css">
+	<script type="text/javascript">
+	$(function(){
+		$("li").each(function(i){
+			if(i==0)		
+				$(this).addClass("one");
+			else if(i==1)
+				$(this).addClass("two");
+			else if(i==2)
+				$(this).addClass("three");
+			else if(i==3)
+				$(this).addClass("four");
+			else if(i==4)
+				$(this).addClass("five");
+			else if(i==5)
+				$(this).addClass("six"); 
+			else if(i==6)
+				$(this).addClass("seven");
+			else if(i==7)
+				$(this).addClass("eight");
+		});
+	});
+	</script>
+  </head>
+  
+  <body style="background:url('${sys_siteimg}')">
+     <div class="w_100 project6style">   	
+    	<div style="position:absolute;z-index: 2;">
+    		<ul>
+    		<@xy_classify_list wx=sys_wx>
+	  			<#list res as l>
+    			
+    			<li>${l.name}</li>
+    			
+    		</#list>
+	  	</@xy_classify_list>
+    		</ul>
+    	</div>	
+    </div>
+    
+    <div class="plug-div">
+		<div class="plug-phone">
+			<div class="plug-menu themeStyle">
+				<span class="close"></span>
+			</div>
+
+			<div class="themeStyle plug-btn plug-btn1 close">
+				<a href="tel:10086"><span
+					style="background-image: url(${sys_basePath}/images/plugmenu1.png);"></span>
+				</a>
+			</div>
+
+			<div class="themeStyle plug-btn plug-btn2 close">
+				<a href="@ac=fans&c=fromUsername&tid=569"><span
+					style="background-image: url(${sys_basePath}/images/plugmenu2.png);"></span>
+				</a>
+			</div>
+
+			<div class="themeStyle plug-btn plug-btn3 close">
+				<a
+					href="../comment.duapp.com/@openid=fromUsername&wxid=041dea8184944dbe512144f5307a67b4"><span
+					style="background-image: url(${sys_basePath}/images/plugmenu4.png);"></span>
+				</a>
+			</div>
+
+			<div class="themeStyle plug-btn plug-btn4 close">
+				<a href="@ac=cardunion&tid=569&c=fromUsername"><span
+					style="background-image: url(${sys_basePath}/images/plugmenu10.png);"></span>
+				</a>
+			</div>
+
+			<div class="plug-btn plug-btn5 close"></div>
+		</div>
+	</div>
+	<script src="${sys_basePath}/js/plugmenu.js" type="text/javascript"></script>
+  </body>
+</html>

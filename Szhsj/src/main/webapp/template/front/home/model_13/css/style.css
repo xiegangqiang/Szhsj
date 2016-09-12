@@ -1,0 +1,278 @@
+*{margin:0;padding:0}
+
+a{color: #000 !important;text-decoration: none !important;}
+
+.clear{clear: both;width:100%;height:0;}
+
+.input-group {
+	margin: 1em 1em;
+}
+
+.item img{
+	width: 100%;
+}
+.yuanjiao {
+	font-family: Arial;
+	border: 1px solid #379082;
+	border-radius: 20px;
+	width: 95%;
+	overflow: hidden;
+	margin: 20px auto;
+}
+
+.yuanjiao .shop_img {
+	float:left;
+	margin: 0px;
+	width: 100%;
+}
+
+.yuanjiao .shop_img img {
+	margin: 0px;
+	width: 100%;
+	height:100%;
+	display: inherit;
+}
+
+/* .yuanjiao .content {
+	padding-right: 1%;
+	float: right;
+	width: 100%;
+	text-align: left;
+	font: italic bold 0.75em/60% arial, sans-serif;
+} */
+
+.yuanjiao div p img{
+	width: 8px;
+	height: 8px;
+}
+
+.content_content_eva{
+	float: left;
+}
+
+.yuanjiao .content h4 {
+	font-size:22px;
+	font-style:normal;
+	font-weight: bold;
+}
+
+.yuanjiao .content p {
+	float:left;
+	width:90%;
+	margin:1% auto;
+	height: 20px;
+	font-size:16px;
+}
+
+.yuanjiao .content {
+	float:left;
+	width:90%;
+	margin:2% 5%;
+}
+
+.stars{ background:url(../images/stars.png) no-repeat; height:14px;padding:2px 43.8px; position:relative;top:3px;}
+.stars1{ background-position:-70.5px 0px;}
+.stars2{ background-position:-51px 0px;}
+.stars3{ background-position:-34px 0px;}
+.stars4{ background-position:-18px 0px;}
+
+.goods{ background:url(../images/goods.png) no-repeat; height:14px;padding:2px 43.8px; position:relative;top:3px;}
+.goods1{ background-position:-70.5px 0px;}
+.goods2{ background-position:-51px 0px;}
+.goods3{ background-position:-34px 0px;}
+.goods4{ background-position:-18px 0px;}
+
+.like{ background:url(../images/likes.png) no-repeat; height:14px;padding:2px 43.8px; position:relative;top:3px;}
+.like1{ background-position:-70.5px 0px;}
+.like2{ background-position:-51px 0px;}
+.like3{ background-position:-34px 0px;}
+.like4{ background-position:-18px 0px;}
+
+
+.but img {
+	height: 5em;
+	width: 5em;
+}
+
+#bottom-nav {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	display:inline;
+	background-color: #FFF;
+	height:70px;
+}
+
+#bottom-nav a {
+	margin:10px 11.6%;
+	width:10%;
+	height:50px;
+	float: left;
+	font-size: 12px;
+}
+
+#bottom-nav img {
+		width: 32px;
+		height:50px;
+		
+}
+
+
+.carousel-control.left {
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .0001) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .3)), to(rgba(0, 0, 0, .0001)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .0001) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+
+.carousel-control.right {
+  right: 0;
+  left: auto;
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .3) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .3) 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .3)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0%, rgba(0, 0, 0, .3) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  background-repeat: repeat-x;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 15%;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .6);
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 40%;
+  z-index: 5;
+  display: inline-block;
+}
+
+.carousel-control .icon-next, .carousel-control .glyphicon-chevron-right {
+  right: 30%;
+  margin-right: -10px;
+}
+
+.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left {
+  left: 30%;
+  margin-left: -10px;
+}
+
+.shop_class{
+	width:20%;
+	margin:0 2.4%;
+	float: left;
+	font-family:"微软雅黑";
+	text-align: center;
+}
+
+.shop_class img{
+	width:100%;
+	height:100%;
+}
+
+.shop_class img{
+	float: left;
+}
+
+.shop_class a:hover{color: #000 !important;text-decoration: none !important;}
+
+.carousel-inner .item .row{
+	width:80%;
+	margin:0 auto;
+}
+
+/*------------- libiaogundong --------------*/
+.scroll-outer {
+	
+}
+
+img{
+	border: 0;
+}
+
+.focus {
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+}
+
+.focus ul {
+	position: absolute;
+}
+
+.focus ul li {
+	float: left;
+	overflow: hidden;
+	position: relative;
+	background: #fff;
+	list-style: none;
+}
+
+.scroller {
+	width:100%;
+}
+
+.scroll-outer{
+	position: relative;
+	margin-bottom:1%;
+}
+
+.focus ul li img {
+	display: block;
+	margin: 0 auto auto auto;
+}
+
+/* .focus ul li div {
+	position: absolute;
+	top:0;
+	z-index:1000;
+	overflow: hidden;
+} */
+
+
+.scroll-outer .preNext {
+	width: 15px;
+	height: 50px;
+	position: absolute;
+	top: 40%;
+	background: url(../img/sprite.png) no-repeat 0 0;
+	cursor: pointer;
+	margin-top: -25px;
+}
+
+.scroll-outer .pre {
+	left: 0%;
+	background-position: 10% 48%;
+}
+
+.scroll-outer .next {
+	right:0%;
+	background-position: 90% 48%;
+}
+
+.classifytext {
+	text-align: center;
+	
+}
+
+.loading {
+	position: fixed;
+	z-index:100000000;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: url('../img/loading.gif') no-repeat center rgba(255,255,255,0.5);
+}
+

@@ -1,0 +1,67 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>${sys_classifyName}</title>
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<base  />
+	<meta charset="utf-8">
+	<link href="${sys_basePath}/css/photo.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="photo">
+	
+	<div id="todayList">
+		<ul class="chatPanel">
+		<#assign sys_pageSize = 5 />
+		<@xy_imagemes_list classify=sys_classify page=sys_page count=sys_pageSize>
+		<#assign sys_allpage = res.allpage/>
+		<#list res.rows as l>
+			<li class="media mediaFullText">
+				<a href="${l.url}">
+					<div class="mediaPanel">
+						<div class="mediaHead">
+							<span class="title">${l.name}</span> 
+							<div class="clr"></div>
+						</div>
+						<div class="mediaImg">
+							<img src="${l.img}">
+						</div>
+					    <div class="mediaContent mediaContentP">
+							<p>${l.descript}</p>
+						</div>
+						<div class="mediaFooter">
+							<span class="mesgIcon right"></span><span class="bt">查看全部</span>
+							<div class="clr"></div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</#list>
+		</@xy_imagemes_list>
+		</ul>
+	</div>
+	<!--页码-->
+	
+	<script>
+	function dourl(url){
+	location.href= url;
+	}
+	</script>
+	
+	<div class="pagination">
+		<div <#if sys_pageIndex lte 1>class="disabled"</#if> ><a href="<#if sys_pageIndex gt 1>/list.jhtml?classify=${sys_classify}&page=${sys_pageIndex - 1}<#else>javascript:void(0);</#if>">上一页</a></div>
+		<div class="allpage">
+			<div class="currentpage">${sys_pageIndex}/${sys_allpage}</div>
+		    <select  id="dropdown-select" name="select" onchange="dourl('/list.jhtml?classify=${sys_classify}&page='+this.value)">
+				<#list 1..sys_allpage as l>
+				<option <#if l == sys_pageIndex >selected="selected" </#if> value=${l} >第${l}页</option>
+				</#list>                
+			</select>
+		</div>
+		<div <#if sys_pageIndex gte sys_allpage>class="disabled"</#if> ><a href="<#if sys_pageIndex lt sys_allpage>/list.jhtml?classify=${sys_classify}&page=${sys_pageIndex + 1}<#else>javascript:void(0);</#if>">下一页</a></div>
+	</div>
+</body>
+</html>

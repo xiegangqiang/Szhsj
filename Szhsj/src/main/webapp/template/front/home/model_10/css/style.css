@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin:0;
+	padding:0;
+}
+.pview{
+	width:100%;
+}
+.rbox{
+	margin:5% auto;
+	width:80%;
+	text-align:center;
+	position:relative;
+	z-index:1;
+}
+.rbox img{
+    
+}
+.rbox span{
+	position:absolute;
+	z-index:2;
+	width:100%;
+	font:14px blod;
+	color:#FFF;
+	left:0;
+	top:15%;
+}
+.menu{
+	margin:5% auto 0 auto;
+}
+.menu ul{
+	margin:0;
+	padding:0;
+}
+.menu ul li{
+	list-style:none;
+	width:45%;
+	display:block;
+	float:left;
+	margin-left:3.5%;
+	margin-bottom:2.5%;
+	border: 0;
+}
+.menu ul li img{
+	border: 0;
+	vertical-align:bottom;
+	display:block;
+}

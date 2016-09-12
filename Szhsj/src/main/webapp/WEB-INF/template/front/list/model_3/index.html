@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>${sys_classifyName}</title>
+	<base  />
+	<meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<meta charset="utf-8">
+	<link href="${sys_basePath}/css/listhome5_3.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="${sys_basePath}/css/plugmenu.css">
+<style>
+ 
+ 
+</style>
+</head>
+<script>
+window.onload = function ()
+{
+var oWin = document.getElementById("win");
+var oLay = document.getElementById("overlay");	
+var oBtn = document.getElementById("popmenu");
+var oClose = document.getElementById("close");
+oBtn.onclick = function ()
+{
+oLay.style.display = "block";
+oWin.style.display = "block"	
+};
+oLay.onclick = function ()
+{
+oLay.style.display = "none";
+oWin.style.display = "none"	
+}
+};
+</script>
+<body id="listhome5">
+	<!-- <div id="ui-header">
+		<div class="fixed">
+			<a class="ui-title" id="popmenu">${sys_classifyName}</a>
+			<a class="ui-btn-left_pre" href="wxapi.php@ac=cate18&tid=671"></a>
+			<a class="ui-btn-right" href="wxapi.php@ac=listhome5&tid=7542&w=1&page=1"></a>
+		</div>
+	</div> 
+	<div class="top46"></div>-->
+
+	<div id="todayList">
+		<ul class="chatPanel">
+		<#assign sys_pageSize = 5 />
+		<@xy_imagemes_list classify=sys_classify page=sys_page count=sys_pageSize>
+		<#assign sys_allpage = res.allpage/>
+		<#list res.rows as l>
+			<li class="mediaFullText">
+				<a href="${l.url}">
+					<div class="time"><p><span class="timed">${l.modifyDate?substring(5,7)}</span>/<span class="timem">${l.modifyDate?substring(8,10)}</span></p><p class="timey">${l.modifyDate?substring(0,4)}</p><span class="timex"></span></div>
+					<div class="mediaPanel media ">
+						<div class="mediaHead"><span class="title">${l.name}</span></div>
+						<div class="mediaImg"><img src="${l.img}"></div>
+						<div class="mediaContent mediaContentP"><p>${l.descript}</p></div>
+						<div class="mediaFooter">
+							<span class="mesgIcon right"></span><span style="line-height:50px;" class="left">查看全文</span>
+							<div class="clr"></div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</#list>
+		</@xy_imagemes_list>
+		</ul>
+	</div>
+	
+	<div class="pagination">
+		<div <#if sys_pageIndex lte 1>class="disabled"</#if> ><a href="<#if sys_pageIndex gt 1>/list.jhtml?classify=${sys_classify}&page=${sys_pageIndex - 1}<#else>javascript:void(0);</#if>">上一页</a></div>
+		<div class="allpage">
+			<div class="currentpage">${sys_pageIndex}/${sys_allpage}</div>
+		    <select  id="dropdown-select" name="select" onchange="dourl('/list.jhtml?classify=${sys_classify}&page='+this.value)">
+				<#list 1..sys_allpage as l>
+				<option <#if l == sys_pageIndex >selected="selected" </#if> value=${l} >第${l}页</option>
+				</#list>                
+			</select>
+		</div>
+		<div <#if sys_pageIndex gte sys_allpage>class="disabled"</#if> ><a href="<#if sys_pageIndex lt sys_allpage>/list.jhtml?classify=${sys_classify}&page=${sys_pageIndex + 1}<#else>javascript:void(0);</#if>">下一页</a></div>
+	</div>
+	
+	<script>
+	function dourl(url){
+	location.href= url;
+	}
+	</script>
+ 
+ </body>
+</html>

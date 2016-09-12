@@ -1,0 +1,73 @@
+body{
+	margin:0;
+	padding:0;
+	width:100%;
+	background-color:#FFF;
+}
+a{
+	text-decoration:none;
+	color:#FFF;
+}
+li{
+	list-style:none;
+}
+.top{
+	position:relative;
+}
+.m1{
+	position:absolute;
+	top:50%;
+	right:0;
+	z-index:1;
+	background:rgba(103,108,110,0.4);
+	padding:5% 0 5% 5%;
+	font:15px bold;
+	color:#FFF;
+	float:right;
+}
+.mes{
+    width:100%;
+}
+.mes ul{
+	margin:5% 1% 2% 1%;
+	padding:0;
+}
+.mes ul li{
+	width:22%;
+	float:left;
+	text-align:center;
+	padding:4% 4% 4% 4%;
+	font:18px bold;
+	color:#FFF;
+	margin:0 0 3% 2.5%;
+}
+.one{
+	background-color:#D4484B;
+}
+.two{
+	background-color:#0099FF;
+}
+.three{
+	background-color:#FE9901;
+}
+.four{
+	background-color:#65CC33;
+}
+.five{
+	background-color:#504C4B;
+}
+.six{
+	background-color:#8F2D06;
+}
+.seven{
+	background-color:#F27F78;
+}
+.eight{
+	background-color:#A784F8;
+}
+.nine{
+	background-color:#FCA353;
+}
+.ten{
+	background-color:#A9D82A;
+}

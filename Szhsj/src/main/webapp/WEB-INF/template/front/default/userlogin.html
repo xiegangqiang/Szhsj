@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>完善个人信息</title>	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />		
+    <link rel="stylesheet" href="../template/front/default/css/style.css" type="text/css"></link>
+    <script type="text/javascript" src="${sys_basePath}/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">       
+    function onSubmitForm() {
+    	var name = $('#username').val();
+    	var mobile = $('#usermobile').val();
+    	name =$.trim(name);
+    	mobile =$.trim(mobile);
+    	if(name == "" && mobile == ""){
+    		alert("请填写姓名和手机号码");}
+    	else{
+    		$('#loginform').submit();}
+    }
+    </script>
+  </head>  
+  <body>
+    <div class="title">
+    	<span>完善个人信息</span>
+    </div>
+    <div class="content">
+    	<span>尊敬的用户您好，欢迎使用有奖活动，请务必认真填写您的个人信息，以便我们及时准确的将奖品信息发送给您！谢谢！</span>
+        <form action="/submitMember.jhtml" method="post" id="loginform">
+        		<input type="hidden" name="userid" value="${sys_userid}"/>
+        		<input type="hidden" name="wx" value="${sys_wx}"/>
+        		<input type="hidden" name="url" value="${sys_url}"/>
+            	<b>姓名：</b><input type="text" name="name" id="username"/><br/>
+           		<b>手机：</b><input type="text" name="mobile" id="usermobile"/>
+            <input type="button" id="button1" value="" onclick="onSubmitForm();"/>
+        </form>
+    </div>
+  </body>
+</html>

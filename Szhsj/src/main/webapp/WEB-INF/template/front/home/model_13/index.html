@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<title>${sys_title}</title>
+
+<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.css" />
+<link href="${sys_basePath}/css/style.css" rel="stylesheet" type="text/css" />
+<link href="${sys_basePath}/css/rs-minimal-white.css" rel="stylesheet" type="text/css" />
+<link href="${sys_basePath}/css/royalslider.css" rel="stylesheet" type="text/css" />
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="${sys_basePath}/js/fss.js"></script>
+<script src="${sys_basePath}/js/jquery.royalslider.min.js"></script>
+<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body  style="background:url('${sys_siteimg}')">
+<div class="loading"></div>
+<div class="sliderContainer fullWidth clearfix">
+  <div id="full-width-slider" class="royalSlider heroSlider rsMinW">
+     <@xy_flash_list wx=sys_wx>
+	        <#list res as l>
+		      <div class="rsContent"><a href="${l.url}"><img class="rsImg" src="${l.img}"></a></div>
+            </#list>
+     </@xy_flash_list>
+  </div>
+</div>
+	<!-- 搜索框 -->
+	<div class="input-group" >
+		<input type="text" class="form-control" id="search" style="border-radius: 1em !important;">
+		<span class="input-group-btn">
+			<button class="btn btn-default btn-link" type="button">
+				<span class="glyphicon glyphicon-search" id="search_btn"></span>
+			</button>
+		</span>
+	</div>
+	<!-- 分类 -->
+<div class="scroll-outer">
+	<div id="focus" class="focus" style="position: relative;">
+		<@xy_classify_list wx=sys_wx>
+		<ul>
+			<#list res as l>
+			<li>
+				<input class="classlId" value="${l.id}" style="display:none;"/>
+				<img src="${l.smallimg}" alt="填写关键字" />
+				<div class="classifytext">${l.name}</div>
+			</li>
+			</#list>
+		</ul>
+		</@xy_classify_list>
+	</div>
+</div>
+<div class="clear"></div>
+
+	<!-- 商家 -->
+	<div id="search_all">
+	<#assign sys_pageSize = 100 >    
+	<@xy_microSummary_list count=sys_pageSize wx=sys_wx classifyId=sys_classifyId>
+	<#list res.rows as l>
+	<div class="yuanjiao">
+	<a href="${l.url}">
+		<input class="classlId" value="${l.classifyId}" style="display:none;"/>
+		<div class="shop_img"><img src="${l.smallimg}" alt="" /></div>
+		<div class="content">
+			<h4 id="${l.name}">${l.name}</h4>
+			<p><span class="content_eva">人气指数：</span><span class="stars stars${l.sentiment}"></span></p>
+			<p><span class="content_eva">推荐指数：</span><span class="goods goods${l.recommend}"></span></p>
+			<p><span class="content_eva">信誉度：</span><span class="like like${l.credit}"></span></p>
+		</div>
+	</a>
+	</div>
+	</#list>
+	</@xy_microSummary_list >
+	</div>
+	<div id="titp" style="display:none;width:100%;padding:20px;font-size: 20px;margin:2% auto;text-align: center;">亲，没有该内容哦！</div>
+	<div style="height:50px"></div>
+	
+	<!-- 底栏 -->
+	<div id="bottom-nav">
+		<a href="">
+			<img src="../template/front/home/model_13/images/返回.png" alt="" />
+		</a>
+		<a href="">
+			<img src="../template/front/home/model_13/images/首页.png" alt="" />
+		</a>
+		<a href="">
+			<img src="../template/front/home/model_13/images/会员.png" alt="" />
+		</a>
+	</div>
+</body>
+<script>
+	jQuery(document).ready(function($) {
+		  $('#full-width-slider').royalSlider({
+		    arrowsNav: true,
+		    loop: false,
+		    keyboardNavEnabled: true,
+		    controlsInside: false,
+		    imageScaleMode: 'fill',
+		    arrowsNavAutoHide: false,
+		    autoScaleSlider: true, 
+		    autoScaleSliderWidth: 960,     
+		    autoScaleSliderHeight: 550,
+		    controlNavigation: 'bullets',
+		    thumbsFitInViewport: false,
+		    navigateByClick: true,
+		    startSlideId: 0,
+		    autoPlay: true,
+		    transitionType:'move',
+		    globalCaption: true,
+		    deeplinking: {
+		      enabled: true,
+		      change: false
+		    },
+		    imgWidth: 1920,
+		    imgHeight: 1080
+	  });
+		  
+		  $.abc("#focus"); 
+		  
+		  $("#focus ul li").click(function(){
+				var classifyId = $(this).find("input").attr('value');
+			  	$(".loading").fadeIn(1000);
+			  	$(".loading").fadeOut(500,function(){
+			  		$(".yuanjiao").each(function(q){
+						if($(this).find("input").attr('value') == classifyId){
+							$(this).show();
+						}else{
+							$(this).hide();
+						}
+					});
+			  	});
+		  });
+		  
+		   $("#search_btn").click(function(){
+			   var name = $("#search").val();
+			   var i = 0;
+			   if(name =="" || name =="输入不能为空!"){
+				   $("#search").val("输入不能为空!");
+			   }else {
+			  	 $(".loading").fadeIn(1000);
+			  	$(".loading").fadeOut(500,function(){
+			  		$(".yuanjiao").each(function(q){
+			  		 
+ 						if($(this).find('h4[id*=' + name + ']').length === 1){
+							$(this).show();
+							i++;
+						}else{
+							$(this).hide();
+						}
+					});
+			  		if(i == 0){
+						$("#titp").show();
+			  		}else{
+			  			$("#titp").hide();
+			  		}
+			  	}); 
+			   }
+		 });
+		   
+		   $("#search").focus(function ()
+				   { 
+			   $("#search").val(''); 
+			   });
+	});
+	
+	$(".carousel-inner .item").each(function(e){
+		var check = (e+1)%3;
+		if(check == 1){
+			$(this).addClass("active");
+		}
+	});
+</script>
+</html>

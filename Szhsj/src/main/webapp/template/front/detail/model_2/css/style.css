@@ -1,0 +1,89 @@
+*{margin: 0; padding: 0; border: 0;font-family: '微软雅黑'}
+body{background: url('../img/gqbg.png') no-repeat ; background-size: cover; background-attachment:fixed;}
+li {list-style: none}
+
+.clreaboth {clear: both; width: 100%;}
+
+.topde {
+	position: fixed;
+	z-index: -1;
+	width: 15%;
+	filter:alpha(Opacity=60);
+	-moz-opacity:0.6;
+	opacity: 0.6; 
+}
+
+.topde img {
+	width: 100%;
+}
+
+.topleft {
+	top: 0;
+	left: 0
+}
+
+.topright {
+	top: 0;
+	right: 0
+}
+
+.con {
+	width: 94%;
+	margin: 0 auto;
+}
+
+.con .con-title .p1{
+	font-size: 18px;
+	margin-top:2%;
+	margin-bottom:1%;
+}
+
+.con .con-title .p2{
+	font-size: 13px;
+	color: #aaa;
+}
+
+.con-content {
+	margin-top: 10px;
+}
+
+.con-content .videocon {
+	margin-top: 20px;
+}
+
+.con-content .article {
+	margin-top: 20px;
+}
+
+.con-content .article * {
+	margin-top: 20px;
+	font-size: 16px;
+}
+
+.owl-carousel .item img {
+	width: 100%;
+}
+
+.con-content .goods {
+	margin-top: 20px;
+}
+
+.con-content .goods div {
+	float: left;
+}
+
+.con-content .goods div:FIRST-CHILD {
+	width: 20%;
+}
+
+.con-content .goods div{
+	width: 75%;
+}
+
+.bottomde {
+	width: 100%;
+}
+
+.bottomde img {
+	width: 100%
+}

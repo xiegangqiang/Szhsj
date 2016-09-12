@@ -1,0 +1,101 @@
+.wxcls {
+	padding: 5px;
+	background: #FFFFFF;
+}
+
+.wxcls .thumb-wrap {
+	float: left;
+	margin: 0 20px 30px 0;
+	width:160px;
+	height: 190px;
+	border: 5px solid #DFEAF2;
+	cursor: pointer;
+}
+
+.wxcls .thumb-wrap:hover {
+	border: 5px solid #ADD2ED;
+}
+
+.wxcls .thumb-wrap img {
+	width:150px;
+	height: 150px;
+}
+
+.wxcls .thumb-wrap span {
+	height: 30px; 
+	line-height: 30px;
+	display: block;
+	text-align: center;
+}.
+
+
+
+.webcls {
+	padding: 5px;
+	background: #FFFFFF;
+}
+
+.webcls .thumb-wrap {
+	float: left;
+	margin: 0 20px 30px 0;
+	width: 253px;
+	height: 559px;
+	cursor: pointer;
+	background: url('../images/iphone-white.png') no-repeat;
+}
+
+.webcls .thumb-wrap:hover {
+	background: url('../images/iphone-black.png') no-repeat;
+}
+
+.webcls .thumb-wrap img {
+	width: 212px;
+	height: 362px;
+	margin: 75px 0 0 22px;
+}
+
+.webcls .thumb-wrap span {
+	height: 30px; 
+	line-height: 30px;
+	display: block;
+	text-align: center;
+	margin-top: 70px;
+}
+
+.webcls .x-item-selected {
+    background: url('../images/iphone-black.png') no-repeat !important;
+}
+
+
+
+.wxgroup-list {
+    padding: 0 3px 0 3px;
+}
+
+.wxgroup-list-item {
+    margin-top: 3px;
+    padding-left: 10px; 
+    font-size: 13px;
+    line-height: 32px;
+    cursor: pointer;
+    /* background: url(../app/resources/default/images/item.png) no-repeat 2px 3px; */
+    border: 1px solid #fff;
+}
+
+.wxgroup-list-item img {
+	margin: 0px 5 -3px 0px;
+}
+
+.wxgroup-list .x-item-selected {
+    font-weight: bold; 
+    color: #15428B;
+    background-color: #DFE8F6;
+    border: 1px dotted #A3BAE9;
+}
+
+.wxgroup-list-item-hover {
+    font-weight: bold; 
+    color: #15428B;
+    background-color: #DFE8F6;
+    border: 1px dotted #A3BAE9;
+}

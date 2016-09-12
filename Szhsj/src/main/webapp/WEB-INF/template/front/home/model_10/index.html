@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;" />
+<title>${sys_title}</title>
+</head>
+    <link href="${sys_basePath}/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_basePath}/css/rs-minimal-white.css" rel="stylesheet" type="text/css" />
+	<link href="${sys_basePath}/css/royalslider.css" rel="stylesheet" type="text/css" />
+    <script src="${sys_basePath}/js/jquery-1.9.1.min.js"></script>
+    <script src="${sys_basePath}/js/jquery.royalslider.min.js"></script>
+<body style="background:url('${sys_siteimg}')">
+ 
+<div class="sliderContainer fullWidth clearfix">
+  <div id="full-width-slider" class="royalSlider heroSlider rsMinW">
+     <@xy_flash_list wx=sys_wx>
+	        <#list res as l>
+		      <div class="rsContent"><a href="${l.url}"><img class="rsImg" src="${l.img}"></a></div>
+            </#list>
+     </@xy_flash_list>
+  </div>
+</div>
+
+<div class="menu">
+      <ul>
+        <@xy_classify_list wx=sys_wx>
+	  		<#list res as l>
+          		<li><a href="${l.url}"><img src="${l.smallimg}" width="100%"/></a></li>
+            </#list>
+	  	</@xy_classify_list>
+      </ul>
+  </div>
+  
+ <script>
+      jQuery(document).ready(function($) {
+  $('#full-width-slider').royalSlider({
+    arrowsNav: true,
+    loop: false,
+    keyboardNavEnabled: true,
+    controlsInside: false,
+    imageScaleMode: 'fill',
+    arrowsNavAutoHide: false,
+    autoScaleSlider: true, 
+    autoScaleSliderWidth: 960,     
+    autoScaleSliderHeight: 550,
+    controlNavigation: 'bullets',
+    thumbsFitInViewport: false,
+    navigateByClick: true,
+    startSlideId: 0,
+    autoPlay: true,
+    transitionType:'move',
+    globalCaption: true,
+    deeplinking: {
+      enabled: true,
+      change: false
+    },
+    imgWidth: 1600,
+    imgHeight: 680
+  });
+});
+    </script>
+</body>
+</html>
